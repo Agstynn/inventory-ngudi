@@ -1,0 +1,4 @@
+/uploads/
+vendor/
+config/db.php
+*.log
