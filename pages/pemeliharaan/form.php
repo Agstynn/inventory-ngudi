@@ -3,7 +3,7 @@ require '../../config/db.php';
 if (session_status() == PHP_SESSION_NONE) session_start();
 if(!isset($_SESSION['user'])) { header('Location: /inventory-php/login.php'); exit; }
 include '../../includes/header.php';
-$alat_res = mysqli_query($conn, "SELECT id,kode,nama,no_seri FROM alat ORDER BY nama");
+$alat_res = mysqli_query($conn, "SELECT id, code AS kode, name AS nama, model AS no_seri, location AS ruangan FROM equipments ORDER BY name");
 $id = isset($_GET['id'])?(int)$_GET['id']:0;
 $data = null;
 if($id){
